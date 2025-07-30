@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root "rankings#index"
+  get 'rankings/index'
 
   resources :players
   resources :tournaments

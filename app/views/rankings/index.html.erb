@@ -1,0 +1,22 @@
+<h1>WORLD RANKINGS</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Player</th>
+      <th>Country</th>
+      <th>Total Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @rankings.each_with_index do |entry, index| %>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><%= entry[:player].name %></td>
+        <td><%= entry[:player].country %></td>
+        <td><%= entry[:total_points] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
