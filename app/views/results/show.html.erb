@@ -3,8 +3,8 @@
 <%= render @result %>
 
 <div>
-  <%= link_to "Edit this result", edit_result_path(@result) %> |
-  <%= link_to "Back to results", results_path %>
+  <%= link_to "試合結果を編集", edit_result_path(@result) %> |
+  <%= link_to "一覧へ戻る", results_path %>
 
-  <%= button_to "Destroy this result", @result, method: :delete %>
+  <%= button_to "試合結果を削除", @result, method: :delete %>
 </div>

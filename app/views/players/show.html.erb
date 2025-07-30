@@ -1,10 +1,19 @@
-<p style="color: green"><%= notice %></p>
+<div class="container">
+  <% if notice %>
+    <div class="alert alert-success">
+      <%= notice %>
+    </div>
+  <% end %>
 
-<%= render @player %>
+  <div class="card mb-4 shadow-sm">
+    <div class="card-body">
+      <%= render @player %>
+    </div>
+  </div>
 
-<div>
-  <%= link_to "Edit this player", edit_player_path(@player) %> |
-  <%= link_to "Back to players", players_path %>
-
-  <%= button_to "Destroy this player", @player, method: :delete %>
+  <div class="d-flex gap-2">
+    <%= link_to "選手を編集", edit_player_path(@player), class: "btn btn-outline-primary" %>
+    <%= link_to "一覧へ戻る", players_path, class: "btn btn-outline-secondary" %>
+    <%= button_to "選手を削除", @player, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-danger" %>
+  </div>
 </div>

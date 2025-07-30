@@ -1,14 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Tournaments</h1>
+<h1>トーナメント一覧</h1>
 
 <div id="tournaments">
   <% @tournaments.each do |tournament| %>
     <%= render tournament %>
     <p>
-      <%= link_to "Show this tournament", tournament %>
+      <%= link_to "詳細", tournament %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New tournament", new_tournament_path %>
+<%= link_to "トーナメントを追加", new_tournament_path %>

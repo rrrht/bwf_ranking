@@ -1,27 +1,26 @@
-<%= form_with(model: player) do |form| %>
+<%= form_with(model: player, local: true, html: { class: "needs-validation" }) do |form| %>
   <% if player.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(player.errors.count, "error") %> prohibited this player from being saved:</h2>
-
-      <ul>
-        <% player.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+    <div class="alert alert-danger">
+      <h4 class="alert-heading">
+        <%= pluralize(player.errors.count, "エラー") %>により登録できませんでした:
+      </h4>
+      <ul class="mb-0">
+        <% player.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="mb-3">
+    <%= form.label "名前", class: "form-label" %>
+    <%= form.text_field :name, class: "form-control", required: true %>
   </div>
 
-  <div>
-    <%= form.label :country, style: "display: block" %>
-    <%= form.text_field :country %>
+  <div class="mb-3">
+    <%= form.label "国", class: "form-label" %>
+    <%= form.text_field :country, class: "form-control", required: true %>
   </div>
 
-  <div>
-    <%= form.submit %>
-  </div>
+  <%= form.submit "登録する", class: "btn btn-primary" %>
 <% end %>

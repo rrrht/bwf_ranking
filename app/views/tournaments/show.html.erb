@@ -3,8 +3,8 @@
 <%= render @tournament %>
 
 <div>
-  <%= link_to "Edit this tournament", edit_tournament_path(@tournament) %> |
-  <%= link_to "Back to tournaments", tournaments_path %>
+  <%= link_to "トーナメントを編集", edit_tournament_path(@tournament) %> |
+  <%= link_to "一覧へ戻る", tournaments_path %>
 
-  <%= button_to "Destroy this tournament", @tournament, method: :delete %>
+  <%= button_to "トーナメントを削除", @tournament, method: :delete %>
 </div>

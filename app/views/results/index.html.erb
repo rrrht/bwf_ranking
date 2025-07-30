@@ -1,14 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Results</h1>
+<h1>試合結果</h1>
 
 <div id="results">
   <% @results.each do |result| %>
     <%= render result %>
     <p>
-      <%= link_to "Show this result", result %>
+      <%= link_to "詳細", result %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New result", new_result_path %>
+<%= link_to "試合結果を追加", new_result_path %>

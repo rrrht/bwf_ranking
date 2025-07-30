@@ -1,14 +1,24 @@
-<p style="color: green"><%= notice %></p>
+<% if notice %>
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <%= notice %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% end %>
 
-<h1>Players</h1>
-
-<div id="players">
-  <% @players.each do |player| %>
-    <%= render player %>
-    <p>
-      <%= link_to "Show this player", player %>
-    </p>
-  <% end %>
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h1 class="h3 fw-bold">選手一覧</h1>
+  <%= link_to "＋ 選手を登録", new_player_path, class: "btn btn-primary" %>
 </div>
 
-<%= link_to "New player", new_player_path %>
+<div id="players" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+  <% @players.each do |player| %>
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <%= render player %>
+          <%= link_to "詳細", player, class: "btn btn-sm btn-outline-primary mt-2" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
