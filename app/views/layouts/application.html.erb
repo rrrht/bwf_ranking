@@ -40,6 +40,15 @@
               <%= link_to "試合結果一覧", results_path, class: "nav-link" %>
             </li>
           </ul>
+
+          <div class="d-flex align-items-center ms-auto">
+            <% if admin_user_signed_in? %>
+              <span class="text-success me-2"><%= current_admin_user.email %></span>
+              <%= link_to "Logout", destroy_admin_user_session_path, method: :delete, class: "btn btn-sm btn-outline-danger" %>
+            <% else %>
+              <%= link_to "Admin Login", new_admin_user_session_path, class: "btn btn-sm btn-outline-primary" %>
+            <% end %>
+          </div>
         </div>
       </div>
     </nav>
@@ -49,6 +58,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
       integrity="sha256-3gQJhtmj7YnV1fmtbVcnAV6eI4ws0Tr48bVZCThtCGQ="
       crossorigin="anonymous"></script>
+
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </body>
 
 </html>

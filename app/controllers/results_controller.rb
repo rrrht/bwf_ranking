@@ -1,4 +1,5 @@
 class ResultsController < ApplicationController
+  before_action :authenticate_admin_user!, except: [:index, :show]
   before_action :set_result, only: %i[ show edit update destroy ]
 
   # GET /results or /results.json

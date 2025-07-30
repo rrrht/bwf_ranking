@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   root "rankings#index"
   get 'rankings/index'
-
+  
+  devise_for :admin_users
   resources :players
   resources :tournaments
   resources :results
