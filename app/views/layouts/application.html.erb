@@ -10,6 +10,11 @@
   </head>
 
   <body>
+    <nav>
+      <%= link_to "選手一覧", players_path %> |
+      <%= link_to "大会一覧", tournaments_path %> |
+      <%= link_to "試合結果一覧", results_path %> |
+    </nav>
     <%= yield %>
   </body>
 </html>
