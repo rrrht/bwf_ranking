@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  player: one
+  tournament: one
+  round: MyString
+  points: 1
+
+two:
+  player: two
+  tournament: two
+  round: MyString
+  points: 1
