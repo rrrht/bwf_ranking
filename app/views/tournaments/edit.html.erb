@@ -1,10 +1,4 @@
-<h1>トーナメントを編集</h1>
+<% title = "トーナメントを編集" %>
+<% cancel_path = tournament_path(@tournament) %>
 
-<%= render "form", tournament: @tournament %>
-
-<br>
-
-<div>
-  <%= link_to "キャンセル", @tournament %> |
-  <%= link_to "一覧へ戻る", tournaments_path %>
-</div>
+<%= render "form_card", title: title, tournament: @tournament, cancel_path: cancel_path %>

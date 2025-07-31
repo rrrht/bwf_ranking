@@ -1,14 +1,22 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>トーナメント一覧</h1>
-
-<div id="tournaments">
-  <% @tournaments.each do |tournament| %>
-    <%= render tournament %>
-    <p>
-      <%= link_to "詳細", tournament %>
-    </p>
-  <% end %>
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h1 class="h3 fw-bold">トーナメント一覧</h1>
+  <%= link_to "＋ トーナメントを追加", new_tournament_path, class: "btn btn-dark" %>
 </div>
 
-<%= link_to "トーナメントを追加", new_tournament_path %>
+<div id="tournaments" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+  <% @tournaments.each do |tournament| %>
+    <div class="col">
+      <div class="card h-100 shadow-sm border-primary">
+        <div class="card-header bg-primary text-white fw-bold">
+          <%= tournament.name %>
+        </div>
+        <div class="card-body">
+          <p class="mb-1">
+            開催日：<%= tournament.start_date %>
+          </p>
+          <%= link_to "詳細", tournament_path(tournament), class: "btn btn-sm btn-outline-primary mt-3" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

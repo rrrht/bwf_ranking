@@ -1,17 +1,9 @@
-<div id="<%= dom_id tournament %>">
-  <p>
-    <strong>トーナメント名:</strong>
-    <%= tournament.name %>
-  </p>
-
-  <p>
-    <strong>グレード:</strong>
-    <%= tournament.grade %>
-  </p>
-
-  <p>
-    <strong>開始日:</strong>
-    <%= tournament.start_date %>
-  </p>
-
+<div class="card mb-4">
+  <div class="card-header bg-primary text-white">
+    <h5 class="mb-0"><%= tournament.name %></h5>
+  </div>
+  <div class="card-body">
+    <p><strong>グレード：</strong> <%= tournament.grade %></p>
+    <p><strong>開催日：</strong> <%= (tournament.start_date) %></p>
+  </div>
 </div>

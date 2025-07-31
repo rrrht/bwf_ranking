@@ -4,7 +4,7 @@ class TournamentsController < ApplicationController
 
   # GET /tournaments or /tournaments.json
   def index
-    @tournaments = Tournament.all
+    @tournaments = Tournament.all.order(start_date: :desc)
   end
 
   # GET /tournaments/1 or /tournaments/1.json
