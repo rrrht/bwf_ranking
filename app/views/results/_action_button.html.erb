@@ -1,0 +1,4 @@
+<div class="d-flex justify-content-evenly align-items-center">
+  <%= link_to "編集", edit_result_path(result), class: "btn btn-sm btn-outline-primary" %>
+  <%= button_to "削除", result, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-sm btn-outline-danger" %>
+</div>

@@ -1,9 +1,8 @@
-<h1>試合結果を追加</h1>
+<% title = "試合結果を登録" %>
+<% cancel_path = results_path %>
 
-<%= render "form", result: @result %>
-
-<br>
-
-<div>
-  <%= link_to "キャンセル", results_path %>
-</div>
+<%= render "form_card",
+           title: title,
+           result: @result,
+           cancel_path: cancel_path,
+           submit_text: "登録" %>
