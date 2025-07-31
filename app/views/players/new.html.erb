@@ -1,17 +1,1 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-lg-8">
-      <div class="card shadow-sm">
-        <div class="card-body">
-          <h1 class="card-title h3 mb-4">選手を登録</h1>
-
-          <%= render "form", player: @player %>
-
-          <div class="mt-4">
-            <%= link_to "一覧へ戻る", players_path, class: "btn btn-outline-secondary" %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<%= render "form_card", title: "選手を登録", player: @player %>
